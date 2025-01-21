@@ -2,7 +2,24 @@
 <head>
     <title>my site real</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="music.css">
+    <script src="https://chattable.neocities.org/scripts/main.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/7.css">
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://unpkg.com/webamp@1.4.0/built/webamp.bundle.min.js"></script>
+  <script>
+  $( function() {
+    $( document ).tooltip({
+      track: true
+    });
+  } );
+  </script>
     <script type="text/javascript">
         // <![CDATA[
         var speed=100; // speed colours change, 1 second = 1000
@@ -74,25 +91,136 @@
     <div style="height: 13%; background-image: url(imgs/main/cutebanner.png); background-repeat: no-repeat; background-size: fit; margin-bottom: 6px;">
         </div>
     <div class="container" style="height: 600px;">
-  <div class="main" style="background-color: aqua; overflow: hidden;">
-      <div style="width: 100%; height: 60%; background-color: blueviolet">
-      <div style="float: left; background-color: aquamarine; height: 100%; width: 70%; overflow: hidden">
+  <div class="main" style="background-image: url(imgs/main/bg1.gif); overflow: hidden; border: 2px outset #737373; box-shadow:0 0 25px lightgray;">
+      <div style="width: 100%; height: 60%;">
+      <div style="float: left;height: 100%; width: 70%; overflow-x: hidden; overflow-y: auto; border-bottom: outset 2px black">
+          <img src="imgs/main/welcome.png" style="width: 250px; margin-top: 5px;"><br>
+          <br>
+          <div style="font-size: 13.5px; width: 90%;">
+          hello, im beta and this is my little corner of the internet. i go by she/they and im just a silly little teen trying to express myself in the way i know how (which is coding an entire website, apparently)
+          <br><br>
+          i started learning to code back in 2020-ish? although i really only started making full proper websites in 2022! if you want to start making websites, definitely check out <a href="/">my resource page!</a>
           </div>
-        <div style="float: left; background-color: pink; height: 100%; width: 30%;">
+          </div>
+        <div style="float: left; height: 100%; width: 30%; overflow-x: hidden; overflow-y: auto; border-bottom: outset 2px black">
           <div style="padding: 5px;">
-            ggg
+              <div class="grid">
+                <!-- music -->
+                <div><a href="#music-popup"><img src="imgs/wincons/dvd.png" width="100%;" class="img-infinitebouncehover"></a>
+                  <div class="window glass active" id="music-popup" role="dialog" aria-labelledby="dialog-title" style="--window-background-color: #507c9c;">
+                  <div class="title-bar">
+                    <div class="title-bar-text" id="dialog-title">my playlist.exe</div>
+                    <div class="title-bar-controls">
+                      <button aria-label="Close" onclick="history.back()"></button>
+                    </div>
+                  </div>
+                  <div class="window-body has-space">
+                    <div class="player">
+                    <div class="details">
+                      <div class="now-playing" style="background-color: white; padding: 2px;">PLAYING x OF y</div>
+                      <div class="track-art"></div>
+                      <div class="track-name" style="background-color: white; padding: 2px;">Track Name</div>
+                      <div class="track-artist" style="background-color: white; padding: 1px;">Track Artist</div>
+                    </div>
+                    <div class="buttons">
+                      <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x" style="color:deeppink;"></i></div>
+                      <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x" style="color:deeppink;"></i></div>
+                      <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x" style="color:deeppink;"></i></div>
+                    </div>
+                    <div class="slider_container">
+                      <div class="current-time">00:00</div>
+                      <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                      <div class="total-duration">00:00</div>
+                    </div>
+                    <div class="slider_container">
+                      <i class="fa fa-volume-down"></i>
+                      <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                      <i class="fa fa-volume-up"></i>
+                    </div>
+                        
+                    <script src="scripts.js"></script>
+                  </div>
+                  </div>
+                  <footer style="text-align: right">
+                    <button onclick="history.back()">Cancel</button>
+                  </footer>
+                </div>
+                    <script>
+                    $( function() {
+                    $( "#music-popup" ).draggable();
+                    } );
+                    </script>
+                  </div>
+                <div><a href="#browser-popup"><img src="imgs/wincons/browser.png" width="100%;" class="img-infinitebouncehover"></a>
+                  <div class="window glass active" id="browser-popup" role="dialog" aria-labelledby="dialog-title" style="--window-background-color: #507c9c;">
+                  <div class="title-bar">
+                    <div class="title-bar-text" id="dialog-title">lancer.exe</div>
+                    <div class="title-bar-controls">
+                      <button aria-label="Close" onclick="history.back()"></button>
+                    </div>
+                  </div>
+                  <div class="window-body has-space">
+                      <img src="https://media1.tenor.com/m/tEpZqM3-TYcAAAAC/lancer-breakdance-lancer.gif">
+                  </div>
+                  <footer style="text-align: right">
+                    <button onclick="history.back()">Cancel</button>
+                  </footer>
+                </div>
+                    <script>
+                    $( function() {
+                    $( "#browser-popup" ).draggable();
+                    } );
+                    </script>
+                  </div>
+                  <!-- -->
+                <div><a href="#doc-popup"><img src="imgs/wincons/doc.png" width="100%;" class="img-infinitebouncehover"></a>
+                  <div class="window glass active" id="doc-popup" role="dialog" aria-labelledby="dialog-title" style="--window-background-color: #507c9c;">
+                  <div class="title-bar">
+                    <div class="title-bar-text" id="dialog-title">free text.txt</div>
+                    <div class="title-bar-controls">
+                      <button aria-label="Close" onclick="history.back()"></button>
+                    </div>
+                  </div>
+                  <div class="window-body has-space">
+                      <div class="field-row-stacked" style="max-width: none">
+                      <textarea id="text29" rows="8">hi. feel free to type whatever here i do not care have fun</textarea>
+                    </div>
+                  </div>
+                  <footer style="text-align: right">
+                    <button onclick="history.back()">Cancel</button>
+                  </footer>
+                </div>
+                    <script>
+                    $( function() {
+                    $( "#doc-popup" ).draggable();
+                    } );
+                    </script>
+                  </div>
             </div>
+            </div>
+            <img src="imgs/stamps/kris.png">
+            <img src="imgs/stamps/ma.gif">
+            <img src="imgs/stamps/miku.gif">
+            <img src="imgs/stamps/music.gif">
+            <img src="imgs/stamps/oldweb.png">
+            <img src="imgs/stamps/parappa.png">
+            <img src="imgs/stamps/pmmm.gif">
+            <img src="imgs/stamps/teto.jpg">
+            <img src="imgs/stamps/voca.gif">
           </div>
       </div>
-      <div style="width: 90%; margin-right: 3%;">
+      <div style="line-height: 50%;"><br></div>
+      <div style="width: 100%; background-image: url(imgs/main/bg2.gif); height: 100%;">
+      <div style="width: 90%; margin-right: 3%;" title="do you like the ace attorney textbox...">
       <div style="background: rgba(8, 52, 140, 0.76); height: 6%; width: 20%; border-top-left-radius: 8px; border-top-right-radius: 8px; border: white 2px solid; float: left; border-bottom: 0;">
           <span style="color: white; font-size: 16px;">Beta</span>
           </div>
       <div style="background: rgba(57, 57, 57, 0.58); height: 20%; width: 100%; border-radius: 8px; border: white 2px solid; border-top-left-radius: 0px; clear:both; padding: 10px; text-align: left; overflow-x: hidden; overflow-y: auto">
         <span style="color: white; font-size: 16px;">
-          hello! im beta and welcome to my site v3 (yes... again) i love my old layout but honestly it wasn't very responsive LOL so we are back with a better one! it <i>should</i> work on almost all screens and sizes! anyways, enjoy your time :3
+          welcome to the site v3 (yes... again) i love my old layout but honestly it wasn't very responsive LOL so we are back with a better one! it <i>should</i> work on almost all screens and sizes! anyways, enjoy your time :3
           </span>
       </div>
+        </div>
         </div>
         </div>
   <div class="side1" style="border: 1px solid black">
@@ -126,7 +254,7 @@
         </table>
                   </div>
       <div class="floatainer" style="background-image: url(imgs/main/notebook.png); overflow: hidden">
-          <div class="window glass active" style="max-width: 100%; --window-background-color: blue">
+          <div class="window glass active" style="max-width: 100%; --window-background-color: #507c9c">
           <div class="title-bar">
             <div class="title-bar-text">activites.txt</div>
           </div>
@@ -173,11 +301,18 @@
   <div class="status" style="background-color: mistyrose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit ullamcorper ligula. Aenean et tortor non felis efficitur facilisis. Integer vitae scelerisque ipsum. Integer fermentum, risus non pretium tempus, purus lacus iaculis ante, vel commodo metus lorem ut tortor. Ut sed rutrum odio. </div>
   <div class="status" style="background-color: mistyrose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit ullamcorper ligula. Aenean et tortor non felis efficitur facilisis. Integer vitae scelerisque ipsum. Integer fermentum, risus non pretium tempus, purus lacus iaculis ante, vel commodo metus lorem ut tortor. Ut sed rutrum odio. </div>
           
-  <div class="tvbox" style="background-color: deepskyblue">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit ullamcorper ligula. Aenean et tortor non felis efficitur facilisis. Integer vitae scelerisque ipsum. Integer fermentum, risus non pretium tempus, purus lacus iaculis ante, vel commodo metus lorem ut tortor. Ut sed rutrum odio. </div>
+  <div class="tvbox" style="background-color: deepskyblue">
+        <iframe src='https://iframe.chat/embed/?chat=beta3dschat' id='chattable' frameborder='none' style="width: 100%; height: 99%; border: 1px black solid;"></iframe>
+        <script>
+          chattable.initialize({
+            theme : "Comment Section"
+          });
+        </script>
+        </div>
           
   <div class="side2" style="position: relative; height:100%;">
         <img src="https://pngimg.com/d/tv_PNG39251.png" style="width: 100%; position: absolute; height: 100%; pointer-events: none;">
-        <iframe width="100%" height="90%" src="https://www.youtube.com/embed/gqPWXe0dCC4?si=u6FPKyRIzslkeitq&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="100%" height="90%" src="https://www.youtube.com/embed/gqPWXe0dCC4?si=u6FPKyRIzslkeitq&amp;controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>     
         </div>
         </div>
