@@ -1,0 +1,229 @@
+<html>
+<head>
+    <title>my site real</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
+    <script type="text/javascript">
+        // <![CDATA[
+        var speed=100; // speed colours change, 1 second = 1000
+        var glow=3; // can be set from '0' for no glow, to 10
+        var raincol=new Array("#ff0000", "#ff5500", "#ffaa00", "#ffff00", "#aaff00", "#55ff00", "#00ff00", "#00ff55", "#00ffaa", "#00ffff", "#00aaff", "#0055ff", "#0000ff", "#5500ff", "#aa00ff", "#ff00ff", "#ff00aa", "#ff0055"); // change the colours if you want to
+        var alink=""; // page to link text to (set to ="" for no link)
+
+        /****************************
+        *    Rainbow Text Effect    *
+        *(c)2003-13 mf2fm web-design*
+        *  http://www.mf2fm.com/rv  *
+        * DON'T EDIT BELOW THIS BOX *
+        ****************************/
+        var rainbow, raintxt, raincnt=0;
+
+        function addLoadEvent(funky) {
+          var oldonload=window.onload;
+          if (typeof(oldonload)!='function') window.onload=funky;
+          else window.onload=function() {
+            if (oldonload) oldonload();
+            funky();
+          }
+        }
+
+        addLoadEvent(regenbogen);
+
+        function regenbogen() { if (document.getElementById) {
+          var i, rainbeau;
+          rainbow=document.getElementById("rainbow");
+          raintxt=rainbow.firstChild.nodeValue;
+          while (rainbow.childNodes.length) rainbow.removeChild(rainbow.childNodes[0]);
+          for (i=0; i<raintxt.length; i++) {
+            rainbeau=document.createElement("span");
+            rainbeau.setAttribute("id", "rain"+i);
+            rainbeau.appendChild(document.createTextNode(raintxt.charAt(i)));
+            if (alink) {
+              rainbeau.style.cursor="pointer";
+              rainbeau.onclick=function() { top.location.href=alink; }
+            }
+            rainbow.appendChild(rainbeau);
+          }
+          rainbow=setInterval ("raining()", speed);
+        }}
+
+        function raining() {
+          var i, c;
+          for (i=0; i<raintxt.length; i++) {
+            c=raincol[(i+raincnt)%raincol.length];
+            document.getElementById("rain"+i).style.color=c;
+            if (glow) document.getElementById("rain"+i).style.textShadow=c+" 0px 0px "+glow+"px";
+          }
+          raincnt++;
+        }
+        // ]]>
+        </script>
+    </head>
+    <body>
+    <div style="padding: 15px">
+    <center>
+    <div id="bigboy" class="window glass active" style="--window-background-color: blue;padding:">
+    <div class="title-bar">
+    <div class="title-bar-text">sekai de ichiban ohime-sama.exe</div>
+    <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Close"></button>
+      </div>
+  </div>
+    <div class="window-body has-space">
+    <div style="height: 13%; background-image: url(imgs/main/cutebanner.png); background-repeat: no-repeat; background-size: fit; margin-bottom: 6px;">
+        </div>
+    <div class="container" style="height: 600px;">
+  <div class="main" style="background-color: aqua; overflow: hidden;">
+      <div style="width: 100%; height: 60%; background-color: blueviolet">
+      <div style="float: left; background-color: aquamarine; height: 100%; width: 70%; overflow: hidden">
+          </div>
+        <div style="float: left; background-color: pink; height: 100%; width: 30%;">
+          <div style="padding: 5px;">
+            ggg
+            </div>
+          </div>
+      </div>
+      <div style="width: 90%; margin-right: 3%;">
+      <div style="background: rgba(8, 52, 140, 0.76); height: 6%; width: 20%; border-top-left-radius: 8px; border-top-right-radius: 8px; border: white 2px solid; float: left; border-bottom: 0;">
+          <span style="color: white; font-size: 16px;">Beta</span>
+          </div>
+      <div style="background: rgba(57, 57, 57, 0.58); height: 20%; width: 100%; border-radius: 8px; border: white 2px solid; border-top-left-radius: 0px; clear:both; padding: 10px; text-align: left; overflow-x: hidden; overflow-y: auto">
+        <span style="color: white; font-size: 16px;">
+          hello! im beta and welcome to my site v3 (yes... again) i love my old layout but honestly it wasn't very responsive LOL so we are back with a better one! it <i>should</i> work on almost all screens and sizes! anyways, enjoy your time :3
+          </span>
+      </div>
+        </div>
+        </div>
+  <div class="side1" style="border: 1px solid black">
+        <div class="floatainer" style="background-image: url(imgs/main/bg2.jpg); overflow-y: scroll; overflow-x: hidden; background-repeat: no-repeat; background-size: cover">
+            <!-- title -->
+            <div style=" background-color: rgba(255, 255, 255, 0.50); padding: 5px; margin: 5px; width: 80%;"><i><span id="rainbow" style="font-size: 23px;">ME-STUFF</span></i></div>
+            <!-- end -->
+            <A href="https://www.theotaku.com/quizzes/view/2702/what_ace_attorney_character_are_you%3F"><img border="0" src="http://www.theotaku.com/guru_results/2702_PhoenixWright.jpg" alt="What Ace Attorney Character Are You?" style="width: 100%"/><br />\</A><A href="https://www.theotaku.com/quizzes/view/2702/what_ace_attorney_character_are_you%3F">What Ace Attorney Character Are You?</A><br />Hosted By theOtaku.com: <a href="http://www.theotaku.com" title="Anime">Anime</a>
+            <br>
+            <br>
+            <a href="http://www.nerdtests.com/ft_nq.php">
+            <img src="http://www.nerdtests.com/images/ft/nq/e7ea6328a4.gif" alt="I am nerdier than 36% of all people. Are you a nerd? Click here to take the Nerd Test, get geeky images and jokes, and talk on the nerd forum!"></a>
+            <br><br>
+            <table width="90%" height="15%" border="0" align="center" cellpadding="1" cellspacing="4" bgcolor="#FF6600">
+          <tr>
+            <td height="1" align="center" style="color: #FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold">
+              <span style="font-size: 20px">hello :3</span><br>
+              <span style="font-size: 15px">i am:</span>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" bgcolor="#FFFFCC" style="color: #000000; font-family: Marker Felt, Verdana, Arial, Helvetica, sans-serif;">
+              alien, aromantic, artsy, asexual, creative, creature, etc., FAAB, fangirl, genderqueer, LGBTQIA, nerd, obsessed, queer, woman-loving
+            </td>
+          </tr>
+          <tr>
+            <td height="1" align="center" style="color: #FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: x-small">
+              <a href="http://www.yaygender.net/pages/gender.pl" style="color: #FFFFFF">Who are you?</a>
+            </td>
+          </tr>
+        </table>
+                  </div>
+      <div class="floatainer" style="background-image: url(imgs/main/notebook.png); overflow: hidden">
+          <div class="window glass active" style="max-width: 100%; --window-background-color: blue">
+          <div class="title-bar">
+            <div class="title-bar-text">activites.txt</div>
+          </div>
+        </div>
+          <div class="window-body has-space" style="height: fit-content;">
+            <div style="padding: 5px;">
+            <!-- currently temp -->
+            <span><i>currently watching:</i></span>
+            <div class="field-row">
+              <input id="radio17" type="radio" name="first-example">
+              <label for="radio17">trigun (again)</label>
+            </div>
+            <!-- temp end -->
+            <!-- currently temp -->
+            <span><i>currently listening to:</i></span>
+            <div class="field-row">
+              <input id="radio17" type="radio" name="first-example">
+              <label for="radio17">confessions of a rotten girl</label>
+            </div>
+            <!-- temp end -->
+            <!-- currently temp -->
+            <span><i>currently reading:</i></span>
+            <div class="field-row">
+              <input id="radio17" type="radio" name="first-example">
+              <label for="radio17">horimiya</label>
+            </div>
+            <!-- temp end -->
+            <!-- currently temp -->
+            <span><i>currently playing:</i></span>
+            <div class="field-row">
+              <input id="radio17" type="radio" name="first-example">
+              <label for="radio17">loz: ocarina of time</label>
+            </div>
+            <!-- temp end -->
+            <br>
+            song of the day
+            <br>
+            <a href="https://www.youtube.com/watch?v=YzizrbBFTak" target="_blank" style="text-transform: lowercase">Doechii - BOILED PEANUTS</a>
+          </div>
+          </div>
+          <img src="imgs/main/mikue.png" width="100%;">
+          </div>
+        </div>
+  <div class="status" style="background-color: mistyrose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit ullamcorper ligula. Aenean et tortor non felis efficitur facilisis. Integer vitae scelerisque ipsum. Integer fermentum, risus non pretium tempus, purus lacus iaculis ante, vel commodo metus lorem ut tortor. Ut sed rutrum odio. </div>
+  <div class="status" style="background-color: mistyrose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit ullamcorper ligula. Aenean et tortor non felis efficitur facilisis. Integer vitae scelerisque ipsum. Integer fermentum, risus non pretium tempus, purus lacus iaculis ante, vel commodo metus lorem ut tortor. Ut sed rutrum odio. </div>
+          
+  <div class="tvbox" style="background-color: deepskyblue">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit ullamcorper ligula. Aenean et tortor non felis efficitur facilisis. Integer vitae scelerisque ipsum. Integer fermentum, risus non pretium tempus, purus lacus iaculis ante, vel commodo metus lorem ut tortor. Ut sed rutrum odio. </div>
+          
+  <div class="side2" style="position: relative; height:100%;">
+        <img src="https://pngimg.com/d/tv_PNG39251.png" style="width: 100%; position: absolute; height: 100%; pointer-events: none;">
+        <iframe width="100%" height="90%" src="https://www.youtube.com/embed/gqPWXe0dCC4?si=u6FPKyRIzslkeitq&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>     
+        </div>
+        </div>
+        <div class="status-bar">
+    <p class="status-bar-field">Press F1 for help</p>
+    <p class="status-bar-field">Slide 1</p>
+    <p class="status-bar-field">CPU Usage: 14%</p>
+  </div>
+        </div>
+    </center>
+        </div>
+     <div class="footer">
+        <div style="width: fit-content; height: 100%; float: right; padding: 3px; font-size: 13px;">
+         <div id="time"></div>
+        <script>
+        function updateTime() {
+            const date = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const time = date.toLocaleTimeString();
+            const day = date.toLocaleDateString(undefined, options);
+            document.getElementById('time').innerHTML =
+                `${time}<br>${day}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+         </div>
+         
+        <div style="width: 100%; height: 80%">
+         <div class="icone" style="height: 100px; width: 50px; margin-left: 10px; margin-right: 5px; float: left;">
+            <a href="/"><img src="imgs/wincons/explorer.png" style="width: 90%;"></a>
+            </div>
+        <div class="icone" style="height: 100px; width: 50px; margin-left: 10px; margin-right: 5px; float: left;">
+            <a href="/"><img src="imgs/wincons/folder.png" style="width: 90%;"></a>
+            </div>
+        <div class="icone" style="height: 100px; width: 50px; margin-left: 10px; margin-right: 5px; float: left;">
+            <a href="/"><img src="imgs/wincons/chess.png" style="width: 90%;"></a>
+            </div>
+        <div class="icone" style="height: 100px; width: 50px; margin-left: 10px; margin-right: 5px; float: left;">
+            <a href="/"><img src="imgs/wincons/music.png" style="width: 90%;"></a>
+            </div>
+        <div class="icone" style="height: 100px; width: 50px; margin-left: 10px; margin-right: 5px; float: left;">
+            <a href="/"><img src="imgs/wincons/journal.png" style="width: 90%;"></a>
+            </div>
+         </div>
+    </div>
+    </body>
+</html>
